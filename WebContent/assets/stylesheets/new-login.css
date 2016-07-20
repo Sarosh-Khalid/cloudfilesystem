@@ -1,0 +1,94 @@
+body{
+	font-family: 'Open Sans', sans-serif;
+	background-color:#f9f9f9;
+
+}
+.new-login-sec{
+	width:100%;
+	min-height:600px;
+	height:auto;
+	padding:0 1em 0 1em;
+	
+}
+
+
+.login-container{
+	max-width:480px;
+	/*min-height:450px;*/
+	height:auto;
+	border:1px solid #999;
+	margin:0 auto;
+	margin-top:140px;
+	padding:0 1em 0 1em;
+	
+}
+.signup-container{
+	max-width:480px;
+	min-height:550px;
+	height:auto;
+	border:1px solid #999;
+	margin:0 auto;
+	margin-top:140px;
+	padding:0 1em 0 1em;
+	
+}
+.login-form-outer{
+		border:1px solid #000;
+width:auto;
+height:53px;;
+position:relative;
+
+}
+.marginbottom-30px{
+	margin-bottom:30px;
+
+}
+.login-form{
+	line-height:50px;
+	color:#000;
+	padding-left:10px;
+	font-weight:lighter;
+	height:51px;
+	
+}
+.login-form:focus{
+	border-bottom:1px solid #000;
+}
+.login-button{
+	width:150px;;
+	line-height:40px;
+	text-align:center;
+	color:#fff;
+	border-radius:2px;
+	background-color:#0079b4;
+	font-weight:500;
+}
+.login-button:hover{
+	background-color:#003557;
+}
+.forget-pass{
+	font-size:14px;color:#333;cursor:pointer;
+	margin:10px 0 20px 0;
+}
+.forget-pass:hover{
+	color:#000;
+	text-decoration:underline;
+}
+.login-loader{
+background-image:url("images/220-2.gif") ;
+	background-position:left;
+	background-repeat:no-repeat;
+	bacground-size:30px 15px;
+	padding-left:70px;
+	width:auto;
+	line-height:20px;
+	z-index:1000;
+	color:#000;	
+	bacground-color:#FFF;
+}
+.login_para{
+	
+	font-size:1.8em;
+	color:#0079b4;
+	font-weight:300;
+}
