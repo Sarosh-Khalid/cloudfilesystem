@@ -115,7 +115,7 @@ $("#ViewOption").click(function(e){
                
                 $.ajax({
                 type :'POST',
-                url : '/Cloudfile/files/fileops/view',
+                url : '/files/fileops/view',
                 data :  {"id":id,"path":tempPath,"name":mulName[i].name},
                 success : function(data){
                     if (data !="Not Supported yet..")
@@ -139,7 +139,7 @@ $("#RenameOption").click(function(e){
           {tempPath=path;}
                 $.ajax({
                 type :'POST',
-                url : '/Cloudfile/files/fileops/rename',
+                url : '/files/fileops/rename',
                 data :  {"id":id,"path":tempPath,"oldname":mulName[i].name,"newname":"rename001"},
                 success : function(data){
                     if(data === "true")
@@ -171,7 +171,7 @@ $("#DeleteOption").click(function(e){
            
              $.ajax({
                 type :'POST',
-                url : '/Cloudfile/files/fileops/delete',
+                url : '/files/fileops/delete',
                 data :  {"id":id,"path":tempPath,"name":mulName[i].name},
                 success : function(data){
                     if(data === "true")
@@ -197,7 +197,7 @@ $("#DownloadOption").click(function(e){
         if(mulName[i].name!=="" && mulName[i].name!==null){
         
          var link=document.createElement('a');
-         link.href='/Cloudfile/files/fileops/download/file?id='+id+'&path='+mulName[i].path+'&name='+mulName[i].name;
+         link.href='/files/fileops/download/file?id='+id+'&path='+mulName[i].path+'&name='+mulName[i].name;
          link.download=mulName[i].name;
          link.click();
         }
@@ -215,7 +215,7 @@ $("#CopyToOption").click(function(e){
           {tempPath=path;}
                 $.ajax({
                 type :'POST',
-                url : '/Cloudfile/files/fileops/copy',
+                url : '/files/fileops/copy',
                 data :  {"id":id,"path":tempPath,"name":mulName[i].name,"newpath":"Home/untitled"},
                 success : function(data){
                     if(data === "true")
@@ -243,7 +243,7 @@ $("#MoveToOption").click(function(e){
           {tempPath=path;}
                 $.ajax({
                 type :'POST',
-                url : '/Cloudfile/files/fileops/move',
+                url : '/files/fileops/move',
                 data :  {"id":id,"path":tempPath,"name":mulName[i].name,"newpath":"Home/untitled"},
                 success : function(data){
                     if(data === "true")
@@ -278,7 +278,7 @@ $('#FileUpload').change(function(e){
     formData.append('id',id);
 
     $.ajax({
-        url: "/Cloudfile/files/fileops/upload",
+        url: "/files/fileops/upload",
         type: 'POST',
         xhr: function() {  // Custom XMLHttpRequest
             var myXhr = $.ajaxSettings.xhr();
@@ -315,7 +315,7 @@ $('#CreateFolder').click(function(e){
     $.ajax({
         type :'POST',
         // contentType: 'application/json',
-        url : '/Cloudfile/files/fileops/makefolder/',
+        url : '/files/fileops/makefolder/',
         //dataType: "JsonObject",
         data : {"id":id,"path":path},
         success : function(data){
@@ -337,7 +337,7 @@ function show() {
     $.ajax({
         type :'POST',
         // contentType: 'application/json',
-        url : '/Cloudfile/files/fileops/pathdetails',
+        url : '/files/fileops/pathdetails',
 
         //dataType: "json",
         data :  {"id":id,"path":path},
@@ -440,7 +440,7 @@ function showspecific() {
     {
     $.ajax({
         type :'POST',
-       url : '/Cloudfile/files/fileops/pathdetails/specific',
+       url : '/files/fileops/pathdetails/specific',
         data :  {"id":id,"path":path,"type":spectype},
         success : function(data){
             var details =JSON.parse(data);
@@ -541,7 +541,7 @@ function view(){
      name=$(this).children('.card-text').children('.file_name').html();  
        $.ajax({
                 type :'POST',
-                url : '/Cloudfile/files/fileops/view',
+                url : '/files/fileops/view',
                 data :  {"id":id,"path":path,"name":name},
                 success : function(data){
                     if (data !=="Not Supported yet..")
@@ -554,15 +554,3 @@ function view(){
 }
 
 
-function windowpop(url) {
-    var leftPosition, topPosition;
-    var width=window.screen.width / 2;
-    var height=window.screen.height / 2;
-    //Allow for borders.
-    leftPosition = (window.screen.width / 2) - ((width / 2) + 10);
-    //Allow for title and status bars.
-    topPosition = (window.screen.height / 2) - ((height / 2) + 50);
-    //Open the window.
-    window.open(url, "Window2", "status=no,height=" + height + ",width=" + width + ",resizable=yes,left=" + leftPosition + ",top=" + topPosition + ",screenX=" + leftPosition + ",screenY=" + topPosition + ",toolbar=no,menubar=no,scrollbars=no,location=no,directories=no");
-    return false;
-}

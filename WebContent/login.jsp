@@ -155,7 +155,7 @@ $('#login').submit(function(e){
 	$.ajax({
 		type :'POST',
                // contentType: 'application/json',
-		url : '/Cloudfile/rest/signing/signin',
+		url : '/rest/signing/signin',
                  //dataType: "JsonObject",
                  data : toJson(),
 		success : function(data){

@@ -154,7 +154,7 @@ function validateFullname(){
 	var fullname=$('#fullname').val();
 	$.ajax({
 		type:'POST',
-		url:'/Cloudfile/rest/signing/ValidateFullName',
+		url:'/rest/signing/ValidateFullName',
 		data:{"fullname":fullname},
 		success: function(data){
 			$('#name_para').html(data);
@@ -168,7 +168,7 @@ function validateEmail(){
 	var email=$('#email').val();
 	$.ajax({
 		type:'POST',
-		url:'/Cloudfile/rest/signing/ValidateEmail',
+		url:'/rest/signing/ValidateEmail',
 		data:{"email":email},
 		success: function(data){
 			$('#email_para').html(data);
@@ -181,7 +181,7 @@ function validatePassword(){
 	var password=$('#password').val();
 	$.ajax({
 		type:'POST',
-		url:'/Cloudfile/rest/signing/ValidatePassword',
+		url:'/rest/signing/ValidatePassword',
 		data:{"password":password},
 		success:function(data){
 			$('#pass_para').html(data);
@@ -194,7 +194,7 @@ $('#signup').submit(function(e){
 	$('#signup-message').html("<div class='loading'></div>");
 	$.ajax({
 		type :'POST',
-		url :'/Cloudfile/rest/signing/signup',
+		url :'/rest/signing/signup',
 		data :toJson(),
 		success : function(data){
 			if(parseInt(data)){
